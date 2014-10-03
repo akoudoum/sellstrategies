@@ -1,0 +1,15 @@
+{
+  "name": "sellstrategy",
+  "version": "0.0.0",
+  "description": "Membership program",
+  "main": "sellstrategy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Armel K",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.9.5",
+    "express3-handlebars": "~0.5.2"
+  }
+}
