@@ -1,17 +1,13 @@
 
 var express = require('express');
+var fortune = require('./lib/fortune.js');
 //Set up handlebar view engine
 var handlebars = require('express3-handlebars').create({defaultLayout:'main'});
 
 
 var app = express();
 
-var fortunes = ["Conquer your fears or thhey will conquer you.",
-                "River need springs.",
-                "Do not fear what you don't know.",
-                "You will have a pleasant surprise.",
-                "Whenever possible, keep it simple."
-               ];
+
 app.set('port', process.env.PORT || 3000);
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -23,8 +19,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/about', function(req, res){
-    var randomFortune = fortunes[Math.floor(Math.random()*fortunes.length)];
-	res.render('about',{fortune: randomFortune});
+	res.render('about',{fortune: fortune.getFortine()});
 });
 
 //custom 404 page
